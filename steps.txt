@@ -1,0 +1,21 @@
+make_bucket: nc-joe-dazzling-good-looks-sprint-07-02-25
+
+
+aws s3 cp influencers.csv s3://nc-joe-dazzling-good-looks-sprint-07-02-25/influencers/
+
+
+CREATE DATABASE influencers_db;
+CREATE EXTERANL TABLE influencers_db.influencers(
+    id int,
+    name string,
+    platform string,
+    followers int,
+    speciality string
+    )
+ROW FORMAT delimited
+FILEDS terminated BY ','
+LINES terminated BY '\n'
+LOCATION 's3://nc-joe-dazzling-good-looks-sprint-07-02-25/influencers/'
+
+
+aws s3 cp kagglehub/datasets/namantrisoliya/amazon-skincare-products/versions/1/skincare.csv s3://nc-joe-dazzling-good-looks-sprint-07-02-25/skincare/
